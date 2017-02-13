@@ -1,0 +1,17 @@
+*~
+*.log
+tmp
+dump
+logs
+project/project
+project/target
+target
+.target
+dist
+.cache
+RUNNING_PID
+.g8
+.classpath
+.project
+.settings/
+bin
