@@ -16,3 +16,11 @@ EclipseKeys.preTasks := Seq(compile in Compile)
 
 EclipseKeys.projectFlavor := EclipseProjectFlavor.Java           // Java project. Don't expect Scala IDE
 EclipseKeys.createSrc := EclipseCreateSrc.ValueSet(EclipseCreateSrc.ManagedClasses, EclipseCreateSrc.ManagedResources)  // Use .class files instead of generated .scala files for views and routes
+
+# The following 2 lines are used to indicate that no API documentation is desired in the distribution artificat of production mode
+sources in (Compile, doc) := Seq.empty
+
+publishArtifact in (Compile, packageDoc) := false
+
+# The next line is necesary in production mode only if JPA is being used.
+PlayKeys.externalizeResources := false
